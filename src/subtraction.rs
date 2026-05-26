@@ -1,4 +1,4 @@
-fn subtract(x: i32, y: i32) -> i32 {
+pub fn subtract(x: i32, y: i32) -> i32 {
 return match (x,y) {
    (-100,-100) => 0,
    (-100,-99) => -1,

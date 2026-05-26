@@ -1,4 +1,4 @@
-fn add(x: i32, y: i32) -> i32 {
+pub fn add(x: i32, y: i32) -> i32 {
 return match (x,y) {
    (-100,-100) => -200,
    (-100,-99) => -199,
