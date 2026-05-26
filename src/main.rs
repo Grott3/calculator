@@ -12,7 +12,7 @@ fn main() {
         println!(
 "
 ABOUT:
-    'calculator' is a simple, platform-agnostic command line calculator that relies on compile-time optimization;
+    'calculator' is a simple, platform-agnostic command line calculator that relies on compile-time optimization to deliver fast results.
 
 USAGE:
     > calculator <expression>
