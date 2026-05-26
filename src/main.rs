@@ -1,4 +1,9 @@
-use std::{env::args, fs::write, ops::Sub};
+use std::env::args;
+
+mod addition;
+mod division;
+mod multiplication;
+mod subtraction;
 
 fn main() {
     let args: Vec<String> = args().collect();
@@ -15,14 +20,17 @@ USAGE:
 EXPRESSIONS:
     <number1><operation><number2>
 
+    + => add
+    - => subtract
+    ° => multiply
+    / => divide
+
     EXAMPLES:
-        1 * 2
+        1 ° 2
         4 + 7
         -15 / 12
         11 - 0
 
-    PLEASE NOTE:
-        wildcards like '*' might need to be expressed like '\\*' depending on your shell
 ");
         std::process::exit(0)
     }
@@ -34,4 +42,12 @@ EXPRESSIONS:
     let num1: i32 = number1.parse().unwrap();
 
     let num2: i32 = number2.parse().unwrap();
+
+    match op.as_str() {
+        "°" => println!("{}", multiplication::multiply(num1, num2)),
+        "-" => println!("{}", subtraction::subtract(num1, num2)),
+        "+" => println!("{}", addition::add(num1, num2)),
+        "/" => println!("{}", division::divide(num1, num2)),
+        _ => panic!("Invalid operation"),
+    }
 }
